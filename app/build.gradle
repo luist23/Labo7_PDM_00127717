@@ -4,7 +4,9 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+//----------------------necesario----------------
 apply plugin: 'kotlin-kapt'
+//-----------------------------------------------
 
 android {
     compileSdkVersion 28
