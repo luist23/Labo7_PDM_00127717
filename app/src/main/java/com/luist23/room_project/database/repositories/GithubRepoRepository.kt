@@ -1,9 +1,9 @@
-package com.luist23.room_project.repositories
+package com.luist23.room_project.database.repositories
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import com.luist23.room_project.daos.GithubRepoDAO
-import com.luist23.room_project.entities.GithubRepo
+import com.luist23.room_project.database.daos.GithubRepoDAO
+import com.luist23.room_project.database.entities.GithubRepo
 
 class GithubRepoRepository (private val repoDAO: GithubRepoDAO){
 

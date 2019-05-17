@@ -1,11 +1,11 @@
-package com.luist23.room_project
+package com.luist23.room_project.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.luist23.room_project.daos.GithubRepoDAO
-import com.luist23.room_project.entities.GithubRepo
+import com.luist23.room_project.database.daos.GithubRepoDAO
+import com.luist23.room_project.database.entities.GithubRepo
 
 @Database(entities = [GithubRepo::class],version = 1,exportSchema = false)//en caso de mas entidades se agregan al arreglo.. despues de la version si se cambi se tiene que migrar
 public abstract class RoomDB:RoomDatabase(){
@@ -16,9 +16,9 @@ public abstract class RoomDB:RoomDatabase(){
     companion object {//solo se necesita una entidad de esta clase SInglenton
 
         @Volatile//notifica cambios a todos los hilos que lo estan usando
-        private var INSTANCE:RoomDB?=null
+        private var INSTANCE: RoomDB?=null
 
-        fun getInstance(context: Context):RoomDB{
+        fun getInstance(context: Context): RoomDB {
             val temInstance = INSTANCE
             if(temInstance!=null){
                 return temInstance
@@ -26,9 +26,9 @@ public abstract class RoomDB:RoomDatabase(){
 
             synchronized(this){//para que solo un hilo la use y puedan crearse dos bases
                 val instance = Room
-                    .databaseBuilder(context,RoomDB::class.java,"Repo_DB")
+                    .databaseBuilder(context, RoomDB::class.java,"Repo_DB")
                     .build()
-                INSTANCE=instance
+                INSTANCE =instance
                 return instance
             }
         }

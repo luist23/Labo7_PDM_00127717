@@ -1,11 +1,11 @@
-package com.luist23.room_project.daos
+package com.luist23.room_project.database.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.luist23.room_project.entities.GithubRepo
+import com.luist23.room_project.database.entities.GithubRepo
 
 @Dao
 interface GithubRepoDAO {

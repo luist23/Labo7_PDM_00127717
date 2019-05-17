@@ -1,4 +1,4 @@
-package com.luist23.room_project.entities
+package com.luist23.room_project.database.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
