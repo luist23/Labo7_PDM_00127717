@@ -12,5 +12,5 @@ class GithubRepoRepository (private val repoDAO: GithubRepoDAO){
     fun nuke() = repoDAO.nukeTable()
 
     @WorkerThread//esta funcion solo puede ser llamada en un workerThread (un hilo)
-    suspend fun insert(repo:GithubRepo) = repoDAO.insert()
+    suspend fun insert(repo:GithubRepo) = repoDAO.insert(repo)
 }
